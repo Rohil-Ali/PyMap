@@ -3,9 +3,36 @@ import argparse
 import tempfile
 import os
 
-# from parser import parse_nmap_xml
-# from rules import load_rules, apply_rules
-# from report import print_report
+from parser import parse_nmap_xml
+from rules import load_rules, apply_rules
+from report import print_report
+
+# parses args from the cli
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description='Nmap automoation vulnurability scanner'
+    )
+
+    parser.add_argument(
+        'target',
+        help='Target IP, hostname or CIDR range (e.g. 192.168.1.0/24)'
+    )
+
+    parser.add_argument(
+        '--mode',
+        choices=['fast', 'full', 'service'],
+        default='fast',
+        help='Scan mode (default: fast)'
+    )
+
+    parser.add_argument(
+        '--rules',
+        default='vuln_rules.json',
+        help='Path to vulnerability rules JSON (default: vuln_rules.json)'
+    )
+
+    return parser.parse_args()
+    
 
 def run_nmap(target: str, mode: str, output_file: str) -> None:
     if mode == 'fast':
@@ -28,7 +55,7 @@ def run_nmap(target: str, mode: str, output_file: str) -> None:
         print(f'[+] Nmap scan completed successfully.')
 
 def main():
-    pass
+    arg = parse_args()
 
 if __name__ == '__main__':
     main()

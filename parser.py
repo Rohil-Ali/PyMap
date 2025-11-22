@@ -1,5 +1,27 @@
+# parses the xml nmap output in a structured list.
 import xml.etree.ElementTree as ET
 from typing import List, Dict, Any
+
+'''
+Structure for my own rememberance
+Each host dict:
+    {
+        "ip": str,
+        "hostname": str or None,
+        "ports": [
+            {
+                "port": int,
+                "protocol": str,
+                "service": str or None,
+                "product": str or None,
+                "version": str or None,
+                "extrainfo": str or None,
+            },
+            ...
+        ]
+    }
+    
+'''
 
 def parse_nmap_xml(xml_path: str) -> List[Dict[str, Any]]:
 
@@ -44,10 +66,13 @@ def parse_nmap_xml(xml_path: str) -> List[Dict[str, Any]]:
                     }
                 )
 
-                host.append(
-                    {
-                        'ip': ip,
-                        'hostname': hostname,
-                        'ports': ports_info
-                    }
-                )
+        hosts.append(
+            {
+                'ip': ip,
+                'hostname': hostname,
+                'ports': ports_info
+            }
+        )
+    
+    return hosts
+        
