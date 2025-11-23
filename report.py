@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
 
-def print_report(hosts : List[Dict[str: Any]], findings : List[Dict[str: Any]]) -> None:
+def print_report(hosts : List[Dict[str, Any]], findings : List[Dict[str, Any]]) -> None:
     print("\n================= SCAN SUMMARY =================\n")
     if not hosts: 
         print("No hosts found.")

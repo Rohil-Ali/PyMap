@@ -1,6 +1,5 @@
 import subprocess
 import argparse
-import tempfile
 import os
 
 from parser import parse_nmap_xml
@@ -68,7 +67,8 @@ def main():
     hosts = parse_nmap_xml(xml_path)
     rules = load_rules(arg.rules)
     findings = apply_rules(hosts, rules)
-    
+
+    print_report(hosts, findings)
 
 if __name__ == '__main__':
     main()
