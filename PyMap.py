@@ -66,8 +66,9 @@ def main():
     run_nmap(arg.target, arg.mode, xml_path)
 
     hosts = parse_nmap_xml(xml_path)
+    rules = load_rules(arg.rules)
+    findings = apply_rules(hosts, rules)
     
-
 
 if __name__ == '__main__':
     main()

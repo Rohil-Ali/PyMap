@@ -1,0 +1,44 @@
+{
+  "rules": [
+    {
+      "id": "FTP-PLAINTEXT",
+      "title": "FTP service exposed (unencrypted)",
+      "severity": "medium",
+      "match": {
+        "port": 21
+      },
+      "description": "FTP transmits credentials in plaintext. Consider disabling or using SFTP/FTPS."
+    },
+    {
+      "id": "SSH-POSSIBLY-OUTDATED",
+      "title": "Possible outdated SSH service",
+      "severity": "medium",
+      "match": {
+        "service": "ssh"
+      },
+      "contains_in_version": "openssh 6.",
+      "description": "SSH service may be running an older OpenSSH version. Consider upgrading to a supported version."
+    },
+    {
+      "id": "SMB-ETERNALBLUE-RISK",
+      "title": "SMBv1 service exposed (EternalBlue risk)",
+      "severity": "high",
+      "match": {
+        "port": 445,
+        "service": "microsoft-ds"
+      },
+      "contains_in_version": "smbv1",
+      "description": "SMBv1 is enabled. Systems exposing SMBv1 may be vulnerable to EternalBlue and related exploits."
+    },
+    {
+      "id": "HTTP-NO-HTTPS",
+      "title": "HTTP exposed without HTTPS",
+      "severity": "low",
+      "match": {
+        "port": 80,
+        "service": "http"
+      },
+      "description": "HTTP is exposed. If HTTPS (443) is not available on this host, consider enabling TLS to protect traffic."
+    }
+  ]
+}
