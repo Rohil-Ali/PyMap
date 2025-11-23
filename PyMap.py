@@ -33,6 +33,11 @@ def parse_args():
 
     return parser.parse_args()
     
+def create_xml_path(filename: str) -> str:
+    output_file = filename
+    os.makedirs(output_file, exist_ok=True)
+    return os.path.join(output_file, 'scan.xml')
+
 
 def run_nmap(target: str, mode: str, output_file: str) -> None:
     if mode == 'fast':
@@ -56,6 +61,13 @@ def run_nmap(target: str, mode: str, output_file: str) -> None:
 
 def main():
     arg = parse_args()
+    xml_path = create_xml_path('output')
+
+    run_nmap(arg.target, arg.mode, xml_path)
+
+    hosts = parse_nmap_xml(xml_path)
+    
+
 
 if __name__ == '__main__':
     main()
