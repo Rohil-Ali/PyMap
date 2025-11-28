@@ -67,7 +67,7 @@ Examples:
 python scanner.py scanme.nmap.org --mode fast
 python scanner.py 192.168.1.10 --mode full --rules vuln_rules.json
 python scanner.py example.com --mode service
-
+```
 ## 🚀 Why I Built This Project
 
 I’ve been doing a lot of coding projects recently, but I wanted something **networking/cybersecurity-related** to deepen my understanding of:
