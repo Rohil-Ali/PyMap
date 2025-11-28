@@ -2,7 +2,7 @@
 
 ---
 
-## 🔧 Features
+## Features
 
 - Runs Nmap automatically from Python  
 - Supports three scan modes:
@@ -16,7 +16,7 @@
 
 ---
 
-## 📦 Requirements
+## Requirements
 
 - **Python 3.8+**
 - **Nmap installed** on your system  
@@ -32,7 +32,7 @@ No external packages needed — everything is standard Python.
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 1. Install **Nmap**  
    - Linux:  
@@ -59,7 +59,7 @@ No external packages needed — everything is standard Python.
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
 Examples:
 
@@ -68,7 +68,7 @@ python scanner.py scanme.nmap.org --mode fast
 python scanner.py 192.168.1.10 --mode full --rules vuln_rules.json
 python scanner.py example.com --mode service
 ```
-## 🚀 Why I Built This Project
+## Why I Built This Project
 
 I’ve been doing a lot of coding projects recently, but I wanted something **networking/cybersecurity-related** to deepen my understanding of:
 
@@ -81,9 +81,9 @@ This project bridges **networking knowledge** and **Python automation**, giving 
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
-### 🧠 Networking / Cybersecurity
+### Networking / Cybersecurity
 
 During this project I learned:
 
@@ -96,7 +96,7 @@ During this project I learned:
 - How version banners can be used to check for vulnerabilities  
 - The legality of scanning and using safe targets like `scanme.nmap.org`  
 
-### 🐍 Python
+### Python
 
 I also strengthened my Python skills:
 
@@ -107,7 +107,7 @@ I also strengthened my Python skills:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Add faster scan profiles
 - Integrate CVE lookups
