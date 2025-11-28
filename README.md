@@ -49,7 +49,7 @@ No external packages needed — everything is standard Python.
 2. Clone or download this project folder.
 
 3. Ensure the project contains:
-   - `scanner.py`  
+   - `pyNum.py`  
    - `parser.py`  
    - `rules.py`  
    - `reporter.py`  
